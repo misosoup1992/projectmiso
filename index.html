@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Miso</title>
+</head>
+<body>
+    Redirecting ... Hold Up!
+
+    <script src="//dweet.io/client/dweet.io.min.js"></script>
+    <script>
+        var thing = "a88e-715d328fce3b";
+        dweetio.get_all_dweets_for(thing, function(err, dweets){
+            if (dweets) {
+                var dweet = dweets[0];
+                if (dweet.content.temperature) {
+                   window.location.replace(dweet.content.temperature);
+                } else {
+                   window.location.replace("http://google.com"); 
+                }
+            } else {
+               window.location.replace("http://google.com");
+            }
+        });
+    </script>
+</body>
+</html>
